@@ -17,12 +17,11 @@ CA_PUBLIC_KEY_FILENAME = RESOURCES_DIR + "ca-public-key.pem"
 SERVER_PRIVATE_KEY_FILENAME = RESOURCES_DIR + "server-private-key.pem"
 SERVER_CSR_FILENAME = RESOURCES_DIR + "server-csr.pem"
 SERVER_PUBLIC_KEY_FILENAME = RESOURCES_DIR + "server-public-key.pem"
-CA_PASSWORD = 'mdpca'
-SERVER_PASSWORD = 'mdpserver'
 
-CA_CONFIGURATION = Configuration("FR", "Territoire de Belfort", "Sevenans", "UTBM_CA", "localhost",['localhost']) 
-SERVER_CONFIGURATION = Configuration("FR", "Territoire de Belfort", "Sevenans", "UTBM_SER", "localhost",['localhost']) 
-
+CA_PASSWORD = "mdpca"
+SERVER_PASSWORD = "mdpserver"
+CA_CONFIGURATION = Configuration("FR", "Territoire de Belfort", "Sevenans", "UTBM_CA", "localhost") 
+SERVER_CONFIGURATION = Configuration("FR", "Territoire de Belfort", "Sevenans", "UTBM_SER", "localhost") 
 # Création de l'autorité de certification
 certificate_authority = CertificateAuthority(CA_CONFIGURATION,CA_PASSWORD,CA_PRIVATE_KEY_FILENAME,CA_PUBLIC_KEY_FILENAME) 
     # regardez en haut et ca/core.py
@@ -40,9 +39,6 @@ ppems.print_perms(CA_PRIVATE_KEY_FILENAME)
 ppems.print_perms(SERVER_PUBLIC_KEY_FILENAME)
 ppems.print_perms(SERVER_PRIVATE_KEY_FILENAME)
 ppems.print_perms(SERVER_CSR_FILENAME)
-
-
-
 
 
 print("finished ...")
